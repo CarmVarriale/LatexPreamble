@@ -29,6 +29,8 @@ Most relevant utilities allow to:
 
 The order in which the preamble instructions are executed is important.
 
+See the [MScThesisReportTemplate](https://github.com/CarmVarriale/MScThesisReportTemplate) repo for an example of how this repo is used.
+
 ## Contributing
 
 Feel free to open an issue or a pull request if you want to suggest improvements or report bugs.
