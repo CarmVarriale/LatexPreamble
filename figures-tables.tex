@@ -1,0 +1,60 @@
+% LTex: enabled=false
+
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{longtable}
+\RequirePackage{rotating}
+
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+
+\captionsetup[table]{
+	format=plain,
+	labelformat=simple,
+	labelsep=colon,
+	justification=centerlast,
+	singlelinecheck=true,
+	position=above,
+	textfont={rm,footnotesize},
+	labelfont={bf,rm,footnotesize},
+}
+
+\captionsetup[subtable]{
+	format=plain,
+	labelformat=brace,
+	labelsep=space,
+	justification=centerlast,
+	singlelinecheck=true,
+	position=above,
+	textfont={rm,footnotesize},
+	labelfont={bf,rm,footnotesize},
+}
+
+\captionsetup[figure]{
+	format=plain,
+	labelformat=simple,
+	labelsep=colon,
+	justification=centerlast,
+	singlelinecheck=true,
+	position=below,
+	textfont={rm,footnotesize},
+	labelfont={bf,rm,footnotesize},
+}
+
+\captionsetup[subfigure]{
+	format=plain,
+	labelformat=brace,
+	labelsep=space,
+	justification=centerlast,
+	singlelinecheck=true,
+	position=below,
+	textfont={rm,footnotesize},
+	labelfont={bf,rm,footnotesize},
+}
+
+\newcolumntype{L}{>{$}l<{$}} % left-aligned, automatic math mode
+\newcolumntype{C}{>{$}c<{$}} % center-aligned, automatic math mode
+\newcolumntype{R}{>{$}r<{$}} % right-aligned, automatic math mode

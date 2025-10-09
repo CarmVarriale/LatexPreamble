@@ -1,0 +1,217 @@
+% LTex: enabled=false
+
+% These symbols do not show up in the "List of symbols" glossary
+%
+% You can use them for symbols joining multiple \gls entries which you want to be consistent through the paper, and easily modifiable in one place.
+% You can also use them for symbols that are seldom used in the text, or for alternative expressions of the same that does not need to be repeated in the glossary.
+%
+% See `symbols.tex` for the main symbols list, examples of syntax and usage.
+
+
+
+
+% A
+\glsxtrnewsymbol[description={average},
+	type={symbols-extra},
+	unit={},
+	parent=subsuper]
+{avg}
+{\ensuremath{\mathrm{avg}}}
+
+
+% B
+
+
+
+% C
+\glsxtrnewsymbol[description={constraint},
+	type={symbols-extra},
+	unit={},
+	parent=roman]
+{constraint}
+{\ensuremath{\mathcal{C}}}
+
+
+% D
+
+
+
+% E
+
+
+
+% F
+
+
+% G
+
+
+
+% H
+
+
+
+% I
+
+
+% J
+
+
+
+% K
+
+
+
+% L
+\glsxtrnewsymbol[description={limit condition},
+	type={symbols-extra},
+	unit={},
+	parent=subsuper]
+{lim}
+{\ensuremath{\mathrm{lim}}}
+
+\glsxtrnewsymbol[description={Lagrange running-cost term},
+	type={symbols-extra},
+	unit={},
+	parent=roman]
+{Lagrange}
+{\ensuremath{\mathrm{La}}}
+
+
+% M
+\glsxtrnewsymbol[description={asymptotic Mach number},
+	type={symbols-extra},
+	unit={}]
+{Minf}
+{\ensuremath{\gls{M}[_{\infty}]}}
+
+\glsxtrnewsymbol[description={Mayer end-cost term},
+	type={symbols-extra},
+	unit={},
+	parent=roman]
+{Mayer}
+{\ensuremath{\mathrm{Ma}}}
+
+
+
+% N
+
+
+
+% O
+
+
+
+% P
+
+
+
+% Q
+
+
+
+% R
+\glsxtrnewsymbol[description={reference condition},
+	type={symbols-extra},
+	unit={},
+	parent=subsuper]
+{ref}
+{\ensuremath{\mathrm{ref}}}
+
+
+\glsxtrnewsymbol[
+	type={symbols-extra},
+	description={radius of gyration},
+	unit={\si{\meter}},
+	parent=greek]
+{rgyr}
+{\ensuremath{\rho}}
+
+
+\glsxtrnewsymbol[
+	type={symbols-extra},
+	description={asymptotic density},
+	unit={\si{\kilo\gram\per\meter\cubed}},
+	parent=greek]
+{rhoinf}
+{\ensuremath{\rho_\infty}}
+
+\glsxtrnewsymbol[description={rotation},
+	type={symbols-extra},
+	unit={},
+	parent=subsuper]
+{rot}
+{\ensuremath{\mathrm{rot}}}
+
+% S
+
+
+
+% T
+\glsxtrnewsymbol[description={maximum available thrust},
+	type={symbols-extra},
+	unit={\si{\newton}}]
+{Tmax}
+{\gsubrm{T}{max}}
+
+\glsxtrnewsymbol[description={time constant},
+	unit={\si{\second}},
+	parent=greek]
+{tau}
+{\ensuremath{\tau}}
+
+
+% U
+
+
+% V
+
+
+
+% W
+
+
+
+% X
+\glsxtrnewsymbol[description={longitudinal position},
+	unit={\si{\meter}},
+	type={symbols-extra},
+	bar={\ensuremath{\overbar{x}}},
+	bold={\ensuremath{\bm{x}}},
+	dot={\ensuremath{\dot{x}}},
+	parent=roman]
+{x}
+{\ensuremath{x}}
+
+\glsxtrnewsymbol[description={longitudinal position of the \gls{ICR}},
+	type={symbols-extra},
+	unit={\si{\meter}},
+	bar={\gbarsubrm{x}{ICR}},
+	dot={\gdotsubrm{x}{ICR}},
+	parent=roman]
+{xicr}
+{\gsubrm{x}{ICR}}
+
+
+% Y
+
+
+
+% Z
+\glsxtrnewsymbol[description={vertical position},
+	unit={\si{\meter}},
+	type={symbols-extra},
+	bar={\overbar{z}},
+	dot={\ensuremath{\dot{z}}},
+	parent=roman]
+{z}
+{\ensuremath{z}}
+
+\glsxtrnewsymbol[description={vertical position of the \gls{ICR}},
+	type={symbols-extra},
+	unit={\si{\meter}},
+	bar={\gbarsubrm{z}{ICR}},
+	dot={\gdotsubrm{z}{ICR}},
+	parent=roman]
+{zicr}
+{\gsubrm{z}{ICR}}

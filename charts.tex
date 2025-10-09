@@ -1,0 +1,37 @@
+% LTex: enabled=false
+
+\RequirePackage{pgfplots}
+\RequirePackage{tikz}
+\usetikzlibrary{
+	arrows,
+	arrows.meta,
+	external,
+	}
+
+\pgfplotsset{
+	compat=newest,
+	axis line style={>=latex},
+	tick label style={font=\scriptsize},
+	label style={font=\footnotesize},
+	x tick scale label style={
+        at={(rel axis cs:1,0,0)},
+        anchor=south west,
+        inner sep=1pt,
+    },
+	y tick scale label style={
+        at={(rel axis cs:0,1,0)},
+        anchor=south west,
+        inner sep=1pt,
+    },
+	z tick scale label style={
+        at={(rel axis cs:0,0,1)},
+        anchor=south west,
+        inner sep=1pt,
+    },
+	legend style = {
+        cells={anchor=west},
+        font=\footnotesize,
+        draw=none,
+        fill=none,
+    },
+}

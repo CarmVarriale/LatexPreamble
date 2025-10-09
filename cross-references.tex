@@ -1,0 +1,38 @@
+% LTex: enabled=false
+
+\RequirePackage{xurl}
+\RequirePackage[
+	perpage,
+	bottom,
+	multiple,
+	marginal
+]{footmisc}
+
+\RequirePackage{hyperref}
+\hypersetup{
+	linktoc=all,
+	colorlinks=true,
+	linkcolor=.,
+	anchorcolor =.,
+	citecolor=.,
+	filecolor=.,
+	urlcolor=.,
+	menucolor=.,
+}
+
+% Fix using multiple footnotes with footmisc and hyperref
+\let\oldFootnote\footnote
+\newcommand\nextToken\relax
+\renewcommand\footnote[1]{%
+    \oldFootnote{#1}\futurelet\nextToken\isFootnote}
+\newcommand\isFootnote{%
+    \ifx\footnote\nextToken\textsuperscript{,}\fi}
+
+
+\RequirePackage[
+	noabbrev,
+	capitalise,
+	nameinlink,
+	sort&compress
+]{cleveref}
+\creflabelformat{equation}{#2#1#3}

@@ -1,0 +1,57 @@
+% LTex: enabled=false
+
+% Operators
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dd}{\ensuremath{\,\mathrm{d}}}
+\newcommand{\ddt}{\ensuremath{\,\dd t}}
+\newcommand{\ddx}{\ensuremath{\,\dd x}}
+\newcommand{\odiff}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\erf}{\mathrm{erf}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1}\mkern 1.5mu}
+\newcommand{\subjto}{\ensuremath{\text{subj. to}}}
+
+% Delimiters
+% \delimiter*{} resizes the size of the brackets, and \delimiter{} does not
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\rowvec}{\lbrack}{\rbrack}
+\DeclarePairedDelimiter{\rowset}{\lbrace}{\rbrace}
+
+% Units
+\RequirePackage{siunitx}
+\sisetup{
+	per-mode=symbol,
+	inter-unit-product = \ensuremath{\! \cdot{} \!},
+}
+
+\DeclareSIUnit[]{\degree}{deg}
+\DeclareSIUnit[]{\inch}{in}
+\DeclareSIUnit[]{\foot}{ft}
+\DeclareSIUnit[]{\mile}{mi}
+\DeclareSIUnit[]{\nmile}{nmi}
+\DeclareSIUnit[]{\rpm}{rpm}
+\DeclareSIUnit[]{\mph}{mph}
+\DeclareSIUnit[]{\knot}{kts}
+\DeclareSIUnit[]{\pound}{lb}
+\DeclareSIUnit[]{\slug}{slug}
+\DeclareSIUnit[]{\ton}{ton}
+\DeclareSIUnit[]{\pint}{pt}
+\DeclareSIUnit[]{\quart}{qt}
+\DeclareSIUnit[]{\igal}{gal}
+\DeclareSIUnit[]{\usgal}{US \ gal}
+\DeclareSIUnit[]{\hour}{hr}
+\DeclareSIUnit[]{\minute}{min}
+\DeclareSIUnit[]{\kiloforce}{kgf}
+\DeclareSIUnit[]{\poundforce}{lbf}
+\DeclareSIUnit[]{\poundfoot}{\poundforce\foot}
+\DeclareSIUnit[]{\psi}{psi}
+\DeclareSIUnit[]{\atm}{atm}
+\DeclareSIUnit[]{\inchMercury}{\si{\inch} \ Hg}
+\DeclareSIUnit[]{\britishthermalunit}{Btu}
+\DeclareSIUnit[]{\ihorsepower}{hp}
+\DeclareSIUnit[]{\mhorsepower}{cv}
+\DeclareSIUnit[]{\fahrenheit}{\text{\textdegree}\mathrm{F}}
+\DeclareSIUnit[]{\rankine}{\text{\textdegree}\mathrm{R}}
+\DeclareSIUnit[]{\passenger}{\mathrm{pax}}

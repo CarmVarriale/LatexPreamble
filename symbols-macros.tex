@@ -1,0 +1,520 @@
+% Shortcuts to create glossary entries with (nested) subscripts and superscripts in various forms (e.g., bold, roman, with bar or dot)
+% The macros check if the subscript/superscript exists as a glossary entry and use it if so, otherwise the literal text is used.
+%
+% The macros require that the first (main) symbol is a glossary entry.
+%
+% For symbols using numerical or explicit subscripts, use \gls{label}[_123]
+%
+% Examples:
+% \gsub{a}{i} produces a_i
+% \gsubrm{a}{i} produces a_{\mathrm{i}}
+% \gbarsub{a}{i} produces \bar{a}_i
+% \gbarsubrm{a}{i} produces \bar{a}_{\mathrm{i}}
+% \gbarsup{a}{i} produces \bar{a}^i
+% \gbarsuprm{a}{i} produces \bar{a}^{\mathrm{i}}
+% \gdotsub{a}{i} produces \dot{a}_i
+% \gdotsubrm{a}{i} produces \dot{a}_{\mathrm{i}}
+% \gboldsub{a}{i} produces \mathbf{a}_i
+% \gsubbold{a}{i} produces a_{\mathbf{i}}
+% \gboldsubbold{a}{i} produces \mathbf{a}_{\mathbf{i}}
+% \gboldsubrm{a}{i} produces \mathbf{a}_{\mathrm{i}}
+
+
+% Symbols with subscripts
+
+\newcommand*{\gsub}[2]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}}%
+			{#2}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubrm}[2]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}}%
+			{\mathrm{#2}}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gbarsub}[2]{%
+	\ensuremath{%
+		\gbar{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}}%
+			{#2}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gbarsubrm}[2]{%
+	\ensuremath{%
+		\gbar{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}}%
+			{\mathrm{#2}}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gbarsup}[2]{%
+	\ensuremath{%
+		\gbar{#1}[^{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}}%
+			{#2}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gbarsuprm}[2]{%
+	\ensuremath{%
+		\gbar{#1}[^{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}}%
+			{\mathrm{#2}}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gdotsub}[2]{%
+	\ensuremath{%
+		\gdot{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}}%
+			{#2}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gdotsubrm}[2]{%
+	\ensuremath{%
+		\gdot{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}}%
+			{\mathrm{#2}}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gboldsub}[2]{%
+	\ensuremath{%
+		\gbold{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}}%
+			{#2}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubbold}[2]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gbold{#2}}%
+			{\bm{#2}}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gboldsubbold}[2]{%
+	\ensuremath{%
+		\gbold{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gbold{#2}}%
+			{#2}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gboldsubrm}[2]{%
+	\ensuremath{%
+		\gbold{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}}%
+			{\mathrm{#2}}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsub}[3]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}[_{\ifglsentryexists{#3}{\gls{#3}}{#3}}]%
+			}{%
+				#2_{\ifglsentryexists{#3}{\gls{#3}}{#3}}%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsubrm}[3]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}[_{%
+					\ifglsentryexists{#3}{%
+						\mathrm{\gls{#3}}%
+					}{%
+						\mathrm{#3}%
+					}%
+				}]%
+			}{%
+				#2_{%
+					\ifglsentryexists{#3}{%
+						\mathrm{\gls{#3}}%
+					}{%
+						\mathrm{#3}%
+					}%
+				}%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsubsub}[4]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}[_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}[_{%
+							\ifglsentryexists{#4}{%
+								\gls{#4}%
+							}{%
+								#4%
+							}%
+						}]%
+					}{%
+						#3_{%
+							\ifglsentryexists{#4}{%
+								\gls{#4}%
+							}{%
+								#4%
+							}%
+						}%
+					}%
+				}]%
+			}{%
+				#2_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}[_{%
+							\ifglsentryexists{#4}{%
+								\gls{#4}%
+							}{%
+								#4%
+							}%
+						}]%
+					}{%
+						#3_{%
+							\ifglsentryexists{#4}{%
+								\gls{#4}%
+							}{%
+								#4%
+							}%
+						}%
+					}%
+				}%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsubsubrm}[4]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}[_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}[_{%
+							\ifglsentryexists{#4}{%
+								\mathrm{\gls{#4}}%
+							}{%
+								\mathrm{#4}%
+							}%
+						}]%
+					}{%
+						#3_{%
+							\ifglsentryexists{#4}{%
+								\mathrm{\gls{#4}}%
+							}{%
+								\mathrm{#4}%
+							}%
+						}%
+					}%
+				}]%
+			}{%
+				#2_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}[_{%
+							\ifglsentryexists{#4}{%
+								\mathrm{\gls{#4}}%
+							}{%
+								\mathrm{#4}%
+							}%
+						}]%
+					}{%
+						#3_{%
+							\ifglsentryexists{#4}{%
+								\mathrm{\gls{#4}}%
+							}{%
+								\mathrm{#4}%
+							}%
+						}%
+					}%
+				}%
+			}%
+		}]%
+	}%
+}%
+
+
+
+
+
+
+
+% Symbols with superscripts
+
+\newcommand*{\gsup}[2]{%
+	\ensuremath{%
+		\gls{#1}[^{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}%
+			}{%
+				#2%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gboldsup}[2]{%
+	\ensuremath{%
+		\gbold{#1}[^{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}%
+			}{%
+				#2%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsuprm}[2]{%
+	\ensuremath{%
+		\gls{#1}[^{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}%
+			}{%
+				\mathrm{#2}%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gdotsup}[2]{%
+	\ensuremath{%
+		\gdot{#1}[^{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}%
+			}{%
+				#2%
+			}%
+		}]%
+	}%
+}%
+
+
+
+
+
+
+
+
+% Symbols with subscripts and superscripts
+
+\newcommand*{\gsubsup}[3]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}%
+			}{%
+				#2%
+			}%
+		}^{%
+			\ifglsentryexists{#3}{%
+				\gls{#3}%
+			}{%
+				#3%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubrmsup}[3]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}%
+			}{%
+				\mathrm{#2}%
+			}%
+		}^{%
+			\ifglsentryexists{#3}{%
+				\gls{#3}%
+			}{%
+				#3%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsuprm}[3]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}%
+			}{%
+				#2%
+			}%
+		}^{%
+			\ifglsentryexists{#3}{%
+				\mathrm{\gls{#3}}%
+			}{%
+				\mathrm{#3}%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubrmsuprm}[3]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\mathrm{\gls{#2}}%
+			}{%
+				\mathrm{#2}%
+			}%
+		}^{%
+			\ifglsentryexists{#3}{%
+				\mathrm{\gls{#3}}%
+			}{%
+				\mathrm{#3}%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubboldsup}[3]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gbold{#2}%
+			}{%
+				\bm{#2}%
+			}%
+		}^{%
+			\ifglsentryexists{#3}{%
+				\gls{#3}%
+			}{%
+				#3%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsubsup}[4]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}[_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}%
+					}{%
+						#3%
+					}%
+				}]%
+			}{%
+				#2_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}%
+					}{%
+						#3%
+					}%
+				}%
+			}%
+		}^{%
+			\ifglsentryexists{#4}{%
+				\gls{#4}%
+			}{%
+				#4%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsupsub}[4]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}%
+			}{%
+				#2%
+			}%
+		}^{%
+			\ifglsentryexists{#3}{%
+				\gls{#3}[_{%
+					\ifglsentryexists{#4}{%
+						\gls{#4}%
+					}{%
+						#4%
+					}%
+				}]%
+			}{%
+				#3_{%
+					\ifglsentryexists{#4}{%
+						\gls{#4}%
+					}{%
+						#4%
+					}%
+				}%
+			}%
+		}]%
+	}%
+}%
+
+\newcommand*{\gsubsubsuprm}[4]{%
+	\ensuremath{%
+		\gls{#1}[_{%
+			\ifglsentryexists{#2}{%
+				\gls{#2}[_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}%
+					}{%
+						#3%
+					}%
+				}]%
+			}{%
+				#2_{%
+					\ifglsentryexists{#3}{%
+						\gls{#3}%
+					}{%
+						#3%
+					}%
+				}%
+			}%
+		}^{%
+			\ifglsentryexists{#4}{%
+				\mathrm{\gls{#4}}%
+			}{%
+				\mathrm{#4}%
+			}%
+		}]%
+	}%
+}%

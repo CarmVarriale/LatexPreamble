@@ -1,0 +1,945 @@
+% LTex: enabled=false
+
+% These symbols constitute the baseline nomenclature, and will show up in the "List of symbols" glossary.
+% You can use them for the most common symbols in your paper, and easily modifiable in one place.
+% You can also use them to define compound symbols by joining multiple \gls entries, ensuring consistency through the paper.
+%
+% See `symbols-macros.tex` for examples of usage.
+% See `symbols-extras.tex` for more symbols that do not show up in the "List of symbols" glossary.
+
+% Syntax for defining a new symbol that will appear in the "List of symbols":
+% \glsxtrnewsymbol[
+% 	description={will appear in the list of symbols in words},
+% 	unit={unit, using the si package},
+% 	parent={category to which it belongs for nesting},
+% 	bold={bold version of the same symbol}
+%	]%
+% 	{label for calling and sorting}
+% 	{math symbol in \ensuremath environment}
+
+
+% A
+\glsxtrnewsymbol[
+	description={generic aerodynamic action},
+	unit={\si{\newton} or \si{\newton\metre}},
+	bold={\ensuremath{\bm{A}}},
+	bar={\ensuremath{\overbar{A}}},
+	parent=roman]
+{A}
+{\ensuremath{A}}
+
+
+\glsxtrnewsymbol[
+	description={generic acceleration},
+	unit={\si{\meter\per\second\squared}},
+	bold={\ensuremath{\bm{a}}},
+	bar={\ensuremath{\overbar{a}}},
+	parent=roman]
+{a}
+{\ensuremath{a}}
+
+
+\glsxtrnewsymbol[
+	description={aerodynamic reference frame},
+	unit={},
+	parent=subsuper]
+{aero}
+{\ensuremath{\mathrm{a}}}
+
+
+\glsxtrnewsymbol[
+	description={angle of attack},
+	unit={\si{\radian}},
+	dot={\ensuremath{\dot{\alpha}}},
+	parent=greek]
+{alpha}
+{\ensuremath{\alpha}}
+
+
+\glsxtrnewsymbol[
+	description={aileron},
+	unit={},
+	parent=subsuper]
+{ail}
+{\ensuremath{\mathrm{ail}}}
+
+
+\glsxtrnewsymbol[
+	description={control authority},
+	unit={},
+	parent=roman]
+{Acal}
+{\ensuremath{\mathcal{A}}}
+
+
+\glsxtrnewsymbol[
+	description={aspect ratio},
+	unit={},
+	parent=roman]
+{AR}
+{\ensuremath{\AR}}
+
+
+
+% B
+\glsxtrnewsymbol[
+	description={reference wing span},
+	unit={\si{\metre}},
+	parent=roman]
+{b}
+{\ensuremath{b}}
+
+
+\glsxtrnewsymbol[
+	description={control effectiveness matrix},
+	unit={\si{\per\radian}},
+	parent=roman]
+{B}
+{\ensuremath{B}}
+
+
+\glsxtrnewsymbol[
+	description={angle of sideslip},
+	unit={\si{\radian}},
+	dot={\ensuremath{\dot{\beta}}},
+	parent=greek]
+{beta}
+{\ensuremath{\beta}}
+
+
+\glsxtrnewsymbol[
+	description={body reference frame},
+	unit={},
+	parent=subsuper]
+{body}
+{\ensuremath{\mathrm{b}}}
+
+
+\glsxtrnewsymbol[
+	description={engine bypass ratio},
+	unit={},
+	parent=roman]
+{bpr}
+{\ensuremath{\mathit{BPR}}}
+
+
+
+% C
+\glsxtrnewsymbol[
+	description={dimensionless coefficient},
+	unit={},
+	bold={\ensuremath{\bm{C}}},
+	parent=roman]
+{C}
+{\ensuremath{C}}
+
+
+\glsxtrnewsymbol[
+	description={aerodynamic mean chord},
+	unit={\si{m}},
+	parent=roman]
+{c}
+{\ensuremath{\overbar{c}}}
+
+
+\glsxtrnewsymbol[
+	description={convex hull},
+	unit={},
+	parent=subsuper]
+{ch}
+{\ensuremath{\mathrm{ch}}}
+
+
+\glsxtrnewsymbol[
+	description={heading angle},
+	unit={\si{rad}},
+	bold={\ensuremath{\bm{\chi}}},
+	dot={\ensuremath{\dot{\chi}}},
+	parent=greek]
+{chi}
+{\ensuremath{\chi}}
+
+
+\glsxtrnewsymbol[
+	description={command},
+	unit={},
+	parent=subsuper]
+{cmd}
+{\ensuremath{\mathrm{cmd}}}
+
+
+\glsxtrnewsymbol[
+	description={collocation point},
+	unit={},
+	parent=subsuper]
+{colloc}
+{\ensuremath{\mathrm{c}}}
+
+
+\glsxtrnewsymbol[
+	description={cruise condition},
+	unit={},
+	parent=subsuper]
+{cr}
+{\ensuremath{\mathrm{cr}}}
+
+
+
+% D
+\glsxtrnewsymbol[
+	description={control surface deflection},
+	unit={\si{\radian}},
+	parent=greek,
+	bold=\ensuremath{\bm{\delta}}]
+{delta}
+{\ensuremath{\delta}}
+
+
+\glsxtrnewsymbol[
+	description={directional},
+	unit={},
+	parent=subsuper]
+{dir}
+{\ensuremath{\mathrm{dir}}}
+
+
+\glsxtrnewsymbol[
+	description={drag force},
+	unit={\si{\newton}},
+	parent=roman]
+{D}
+{\ensuremath{D}}
+
+
+
+% E
+\glsxtrnewsymbol[
+	description={span efficiency factor},
+	unit={},
+	parent=roman]
+{e}
+{\ensuremath{e}}
+
+
+\glsxtrnewsymbol[
+	description={Earth reference frame},
+	unit={},
+	parent=subsuper]
+{earth}
+{\ensuremath{\mathrm{e}}}
+
+\glsxtrnewsymbol[
+	description={elevator},
+	unit={},
+	parent=subsuper]
+{ele}
+{\ensuremath{\mathrm{ele}}}
+
+
+\glsxtrnewsymbol[
+	description={engine},
+	unit={},
+	parent=subsuper]
+{eng}
+{\ensuremath{\mathrm{eng}}}
+
+
+\glsxtrnewsymbol[
+	description={virtual control surface deflections},
+	unit={\si{\radian}},
+	bar={\ensuremath{\overbar{\varepsilon}}},
+	bold={\ensuremath{\bm{\varepsilon}}},
+	parent=greek
+]
+{eps}
+{\ensuremath{\varepsilon}}
+
+
+\glsxtrnewsymbol[
+	description={equality},
+	unit={},
+	parent=subsuper]
+{eq}
+{\ensuremath{\mathrm{eq}}}
+
+
+\glsxtrnewsymbol[
+	description={dimensionless span-wise position},
+	unit={},
+	parent=greek]
+{eta}
+{\ensuremath{\eta}}
+
+
+
+% F
+\glsxtrnewsymbol[
+	description={generic function},
+	unit={},
+	parent=roman,
+	bold=\ensuremath{\bm{f}}]
+{f}
+{\ensuremath{f}}
+
+
+\glsxtrnewsymbol[
+	description={final condition},
+	unit={},
+	parent=subsuper]
+{fin}
+{\ensuremath{\mathrm{fin}}}
+
+
+\glsxtrnewsymbol[
+	description={generic force},
+	unit={\si{\newton}},
+	parent=roman,
+	bold=\ensuremath{\bm{F}}]
+{F}
+{\ensuremath{F}}
+
+
+
+% G
+\glsxtrnewsymbol[
+	description={gravitational acceleration},
+	unit={\si{\meter\per\second\squared}},
+	parent=roman]
+{g}
+{\ensuremath{g}}
+
+
+\glsxtrnewsymbol[
+	description={flight path angle},
+	unit={\si{\radian}},
+	bar={\ensuremath{\overbar{\gamma}}},
+	bold={\ensuremath{\bm{\gamma}}},
+	dot={\ensuremath{\dot{\gamma}}},
+	ddot={\ensuremath{\ddot{\gamma}}},
+	parent=greek]
+{gamma}
+{\ensuremath{\gamma}}
+
+
+\glsxtrnewsymbol[
+	description={ganging matrix},
+	unit={},
+	parent=roman]
+{G}
+{\ensuremath{G}}
+
+
+
+% H
+\glsxtrnewsymbol[
+	description={altitude},
+	unit={\si[]{\metre}},
+	dot={\ensuremath{\dot{h}}},
+	ddot={\ensuremath{\ddot{h}}},
+	parent=roman]
+{h}
+{\ensuremath{h}}
+
+
+\glsxtrnewsymbol[
+	description={gearing matrix},
+	unit={},
+	parent=roman]
+{H}
+{\ensuremath{H}}
+
+
+\glsxtrnewsymbol[
+	description={harmonic},
+	unit={},
+	parent=subsuper]
+{har}
+{\ensuremath{\mathrm{har}}}
+
+
+
+% I
+\glsxtrnewsymbol[
+	description={identity matrix},
+	unit={},
+	parent=roman]
+{I}
+{\ensuremath{I}}
+
+
+\glsxtrnewsymbol[
+	description={initial condition},
+	unit={},
+	parent=subsuper]
+{ini}
+{\ensuremath{\mathrm{ini}}}
+
+
+\glsxtrnewsymbol[
+	description={inequality},
+	unit={},
+	parent=subsuper]
+{ineq}
+{\ensuremath{\mathrm{ineq}}}
+
+
+
+
+% J
+\glsxtrnewsymbol[
+	description={inertia tensor},
+	unit={\si{\kilogram\metre\squared}},
+	parent=roman]
+{J}
+{\ensuremath{J}}
+
+
+\glsxtrnewsymbol[
+	description={objective function},
+	unit={},
+	parent=roman]
+{Jcal}
+{\ensuremath{\mathcal{J}}}
+
+
+
+% K
+
+
+% L
+\glsxtrnewsymbol[
+	description={lift force},
+	unit={\si{\newton}},
+	parent=roman]
+{L}
+{\ensuremath{L}}
+
+
+\glsxtrnewsymbol[
+	description={roll moment},
+	unit={\si{\newton\metre}},
+	parent=roman]
+{Lroll}
+{\ensuremath{\mathcal{L}}}
+
+
+\glsxtrnewsymbol[
+	description={lateral},
+	unit={},
+	parent=subsuper]
+{lat}
+{\ensuremath{\mathrm{lat}}}
+
+
+\glsxtrnewsymbol[
+	description={lower bound},
+	unit={},
+	parent=subsuper]
+{lb}
+{\ensuremath{\mathrm{lb}}}
+
+
+\glsxtrnewsymbol[
+	description={longitudinal},
+	unit={},
+	parent=subsuper]
+{lon}
+{\ensuremath{\mathrm{lon}}}
+
+
+% M
+\glsxtrnewsymbol[
+	description={mass},
+	unit={\si{\kilo\gram}},
+	dot={\ensuremath{\dot{m}}},
+	parent=roman]
+{m}
+{\ensuremath{m}}
+
+
+\glsxtrnewsymbol[
+	description={Mach number},
+	unit={},
+	dot={\ensuremath{\dot{M}}},
+	parent=roman]
+{M}
+{\ensuremath{M}}
+
+
+\glsxtrnewsymbol[
+	description={maximum operative},
+	unit={},
+	parent=subsuper]
+{mo}
+{\ensuremath{\mathrm{mo}}}
+
+
+\glsxtrnewsymbol[
+	description={pitch moment},
+	unit={\si{\newton\metre}},
+	parent=roman]
+{Mpitch}
+{\ensuremath{\mathcal{M}}}
+
+
+\glsxtrnewsymbol[
+	description={maximum at take-off},
+	unit={},
+	parent=subsuper]
+{mto}
+{\ensuremath{\mathrm{mto}}}
+
+
+\glsxtrnewsymbol[
+	description={bank angle},
+	unit={\si{\degree}},
+	dot={\ensuremath{\dot{\mu}}},
+	parent=greek]
+{mu}
+{\ensuremath{\mu}}
+
+
+
+% N
+\glsxtrnewsymbol[
+	description={number of elements},
+	unit={},
+	parent=roman]
+{N}
+{\ensuremath{N}}
+
+
+\glsxtrnewsymbol[
+	description={yaw moment},
+	unit={\si{\newton\metre}},
+	parent=roman]
+{Nyaw}
+{\ensuremath{\mathcal{N}}}
+
+
+\glsxtrnewsymbol[
+	description={load factor},
+	unit={},
+	parent=roman]
+{n}
+{\ensuremath{n}}
+
+
+\glsxtrnewsymbol[
+	description={control objective},
+	unit={},
+	parent=greek,
+	bold=\ensuremath{\bm{\nu}}]
+{nu}
+{\ensuremath{\nu}}
+
+
+
+% O
+\glsxtrnewsymbol[
+	description={angular velocity},
+	unit={\si[]{\radian\per\second}},
+	parent=greek,
+	bold=\ensuremath{\bm{\omega}}]
+{omega}
+{\ensuremath{\omega}}
+
+
+\glsxtrnewsymbol[
+	description={operative empty},
+	unit={},
+	parent=subsuper]
+{oe}
+{\ensuremath{\mathrm{oe}}}
+
+
+
+
+% P
+\glsxtrnewsymbol[
+	description={roll rate},
+	unit={\si{\radian\per\second}},
+	dot={\ensuremath{\dot{p}}},
+	parent=roman]
+{p}
+{\ensuremath{p}}
+
+
+\glsxtrnewsymbol[
+	description={generalized inverse matrix},
+	unit={},
+	parent=roman]
+{P}
+{\ensuremath{P}}
+
+
+\glsxtrnewsymbol[
+	description={mission phase},
+	unit={},
+	parent=subsuper]
+{phase}
+{\ensuremath{\mathrm{p}}}
+
+
+\glsxtrnewsymbol[
+	description={passengers},
+	unit={},
+	parent=subsuper]
+{pax}
+{\ensuremath{\mathrm{pax}}}
+
+
+\glsxtrnewsymbol[
+	description={roll angle},
+	unit={\si{\radian}},
+	dot={\ensuremath{\dot{\phi}}},
+	parent=greek]
+{phi}
+{\ensuremath{\varphi}}
+
+
+\glsxtrnewsymbol[
+	description={pilot},
+	unit={},
+	parent=subsuper]
+{pil}
+{\ensuremath{\mathrm{pil}}}
+
+
+\glsxtrnewsymbol[
+	description={yaw angle},
+	unit={\si{\radian}},
+	dot={\ensuremath{\dot{\psi}}},
+	parent=greek]
+{psi}
+{\ensuremath{\psi}}
+
+
+
+% Q
+\glsxtrnewsymbol[
+	description={pitch rate},
+	unit={\si{\radian\per\second}},
+	dot={\ensuremath{\dot{q}}},
+	parent=roman]
+{q}
+{\ensuremath{q}}
+
+
+\glsxtrnewsymbol[
+	description={asymptotic dynamic pressure},
+	unit={\si{\pascal}},
+	parent=roman]
+{qinf}
+{\ensuremath{q_\infty}}
+
+
+
+
+% R
+\glsxtrnewsymbol[
+	description={yaw rate},
+	unit={\si{\radian\per\second}},
+	dot={\ensuremath{\dot{r}}},
+	bold={\ensuremath{\bm{r}}},
+	parent=roman]
+{r}
+{\ensuremath{r}}
+
+
+\glsxtrnewsymbol[
+	description={range},
+	unit={\si{\kilo\meter}},
+	parent=roman]
+{R}
+{\ensuremath{R}}
+
+
+\glsxtrnewsymbol[
+	description={air density},
+	unit={\si{\kilo\gram\per\meter\cubed}},
+	parent=greek]
+{rho}
+{\ensuremath{\rho}}
+
+
+\glsxtrnewsymbol[
+	description={rudder},
+	unit={},
+	parent=subsuper]
+{rud}
+{\ensuremath{\mathrm{rud}}}
+
+
+
+% S
+\glsxtrnewsymbol[
+	description={reference wing area},
+	unit={\si{\meter\squared}},
+	parent=roman]
+{S}
+{\ensuremath{S}}
+
+
+\glsxtrnewsymbol[
+	description={state variables},
+	unit={},
+	bar={\ensuremath{\overbar{\bm{\sigma}}}},
+	dot={\ensuremath{\dot{\bm{\sigma}}}},
+	parent=greek]
+{sigmabold}
+{\ensuremath{\bm{\sigma}}}
+
+
+\glsxtrnewsymbol[
+	description={spoiler},
+	unit={},
+	parent=subsuper]
+{spo}
+{\ensuremath{\mathrm{spo}}}
+
+
+\glsxtrnewsymbol[
+	description={steady state},
+	unit={},
+	parent=subsuper]
+{ss}
+{\ensuremath{\mathrm{ss}}}
+
+
+
+% T
+\glsxtrnewsymbol[
+	description={time},
+	unit={\si{\second}},
+	parent=roman]
+{t}
+{\ensuremath{t}}
+
+
+\glsxtrnewsymbol[
+	description={thrust force},
+	unit={\si{\newton}},
+	parent=roman]
+{T}
+{\ensuremath{T}}
+
+
+\glsxtrnewsymbol[
+	description={thrust-specific fuel consumption},
+	unit={\si{\gram\per\newton\per\second}},
+	parent=roman]
+{tsfc}
+{\ensuremath{\mathit{TSFC}}}
+
+
+\glsxtrnewsymbol[
+	description={trim controls},
+	unit={},
+	parent=greek]
+{taubold}
+{\ensuremath{\bm{\tau}}}
+
+
+\glsxtrnewsymbol[
+	description={control device efficiency},
+	unit={},
+	parent=greek]
+{taud}
+{\ensuremath{\tau_{\ensuremath{\delta}}}}
+
+
+\glsxtrnewsymbol[
+	description={pitch angle},
+	unit={\si{\radian}},
+	dot={\ensuremath{\dot{\theta}}},
+	parent=greek]
+{theta}
+{\ensuremath{\theta}}
+
+
+\glsxtrnewsymbol[
+	description={trim condition},
+	unit={},
+	parent=subsuper]
+{tr}
+{\ensuremath{\mathrm{tr}}}
+
+
+
+
+% U
+\glsxtrnewsymbol[
+	description={longitudinal speed},
+	unit={\si[]{\metre\per\second}},
+	bar={\ensuremath{\overbar{u}}},
+	dot={\ensuremath{\dot{u}}},
+	parent=roman]
+{u}
+{\ensuremath{u}}
+
+
+\glsxtrnewsymbol[
+	description={inputs},
+	unit={},
+	parent=roman]
+{ubold}
+{\ensuremath{\bm{u}}}
+
+
+\glsxtrnewsymbol[
+	description={upper bound},
+	unit={},
+	parent=subsuper]
+{ub}
+{\ensuremath{\mathrm{ub}}}
+
+
+
+
+
+% V
+\glsxtrnewsymbol[
+	description={lateral speed},
+	unit={\si[]{\metre\per\second}},
+	bar={\ensuremath{\overbar{v}}},
+	dot={\ensuremath{\dot{v}}},
+	parent=roman]
+{v}
+{\ensuremath{v}}
+
+
+\glsxtrnewsymbol[
+	description={airspeed},
+	unit={\si{\meter\per\second}},
+	bold={\ensuremath{\bm{V}}},
+	dot={\ensuremath{\dot{V}}},
+	parent=roman]
+{V}
+{\ensuremath{V}}
+
+
+\glsxtrnewsymbol[
+	description={asymptotic airspeed},
+	unit={\si{\meter\per\second}},
+	bold={\ensuremath{\bm{V}_\infty}},
+	parent=roman]
+{Vinf}
+{\ensuremath{V_\infty}}
+
+
+% W
+\glsxtrnewsymbol[
+	description={vertical speed},
+	unit={\si{\meter\per\second}},
+	bar={\ensuremath{\overbar{w}}},
+	dot={\ensuremath{\dot{w}}},
+	parent=roman]
+{w}
+{\ensuremath{w}}
+
+
+\glsxtrnewsymbol[
+	description={weighting matrix},
+	unit={},
+	parent=roman]
+{W}
+{\ensuremath{W}}
+
+
+\glsxtrnewsymbol[
+	description={wing},
+	unit={},
+	parent=subsuper]
+{win}
+{\ensuremath{\mathrm{win}}}
+
+
+\glsxtrnewsymbol[
+	description={wind reference frame},
+	unit={},
+	parent=subsuper]
+{wind}
+{\ensuremath{\mathrm{w}}}
+
+
+
+
+% X
+\glsxtrnewsymbol[
+	description={position of the neutral point},
+unit={\si{\meter}},
+bar={\ensuremath{\overbar{x}_{\gls{alpha}}}},
+parent=roman]
+{xalpha}
+{\ensuremath{x_{\gls{alpha}}}}
+
+
+\glsxtrnewsymbol[
+	description={position of the \glsentryfirst{ccp}},
+unit={\si{\meter}},
+bar={\ensuremath{\overbar{x}_{\gls{delta}}}},
+parent=roman]
+{xdelta}
+{\ensuremath{x_{\gls{delta}}}}
+
+
+\glsxtrnewsymbol[
+	description={position of the maneuver point},
+unit={\si{\meter}},
+bar={\ensuremath{\overbar{x}_m}},
+parent=roman]
+{xm}
+{\ensuremath{x_m}}
+
+
+\glsxtrnewsymbol[
+	description={states},
+	unit={},
+	parent=roman]
+{xbold}
+{\ensuremath{\bm{x}}}
+
+
+\glsxtrnewsymbol[
+	description={longitudinal force},
+	unit={\si{\newton}},
+	parent=roman]
+{X}
+{\ensuremath{X}}
+
+
+
+% Y
+\glsxtrnewsymbol[
+	description={lateral force},
+	unit={\si{\newton}},
+	parent=roman]
+{Y}
+{\ensuremath{Y}}
+
+
+
+% Z
+\glsxtrnewsymbol[
+	description={normal force},
+	unit={\si{\newton}},
+	parent=roman]
+{Z}
+{\ensuremath{Z}}
+
+
+\glsxtrnewsymbol[
+	description={zero lift},
+	unit={},
+	parent=subsuper]
+{zl}
+{\ensuremath{\mathrm{zl}}}
+
+
+\glsxtrnewsymbol[
+	description={zero fuel},
+	unit={},
+	parent=subsuper]
+{zf}
+{\ensuremath{\mathrm{zf}}}

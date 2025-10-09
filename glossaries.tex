@@ -1,0 +1,72 @@
+% LTex: enabled=false
+
+\RequirePackage[
+	% nomain,
+	acronym,	% main glossary for acronyms in text
+	symbols,	% main glossary for symbols in math and text
+	nogroupskip,
+	nonumberlist,
+	toc,
+	automake,
+	stylemods={mcols}
+]{glossaries-extra}
+
+% Extra glossary entries
+\provideignoredglossary{symbols-extra}
+\provideignoredglossary{acronyms-extra}
+
+% Extra keys for unit of measurements and symbol modifiers
+\glsaddkey{bar}{}{\gentrybar}{\Gentrybar}{\gbar}{\Gbar}{\GBAR}
+\glsaddkey{bold}{}{\gentrybold}{\Gentrybold}{\gbold}{\Gbold}{\GBOLD}
+\glsaddkey{dot}{}{\gentrydot}{\Gentrydot}{\gdot}{\Gdot}{\GDOT}
+\glsaddkey{ddot}{}{\gentryddot}{\Gentryddot}{\gddot}{\Gddot}{\GDDOT}
+\glsaddkey{unit}{}{\gentryunit}{\Gentryunit}{\gunit}{\Gunit}{\GUNIT}
+\glssetnoexpandfield{bar}
+\glssetnoexpandfield{bold}
+\glssetnoexpandfield{dot}
+\glssetnoexpandfield{ddot}
+\glssetnoexpandfield{unit}
+
+% Customize acronyms and acronyms list
+\setabbreviationstyle[abbreviation]{long-short}
+\setabbreviationstyle[acronym]{long-short}
+
+% Define categories for sorting and grouping symbols
+\glsxtrnewsymbol[description={\glsxtrnopostpunc}, sort={1}]%
+    {roman}{Roman letters}
+\glsxtrnewsymbol[description={\glsxtrnopostpunc},sort={2}]%
+    {greek}{\parbox{\textwidth}{\vspace{5mm}Greek letters\vspace{1mm}}}
+\glsxtrnewsymbol[description={\glsxtrnopostpunc},sort={3}]%
+    {subsuper}{\parbox{\textwidth}{\vspace{5mm}Subscripts and superscripts\vspace{1mm}}}
+
+% Add units in the list of symbols
+\newglossarystyle{mcolalttree-units}{%
+	\setglossarystyle{mcolalttree}%
+	\renewcommand{\glossentrydesc}[1]{%
+		\ifglshasfield{unit}{##1}{%
+			\glsdesc{##1}, \gunit{##1}%
+		}{%
+		\glsdesc{##1}%
+		}
+	}
+}
+\newglossarystyle{alttree-units}{%
+	\setglossarystyle{alttree}%
+	\renewcommand{\glossentrydesc}[1]{%
+		\ifglshasfield{unit}{##1}{%
+			\glsdesc{##1}, \gunit{##1}%
+		}{%
+		\glsdesc{##1}%
+		}
+	}
+}
+
+% Shortcuts to nest multiple subscript, superscript, and modifiers
+\input{.preamble/symbols-macros}
+
+% Load entries and create lists
+\makeglossaries
+\loadglsentries{.preamble/symbols}
+\loadglsentries{.preamble/symbols-extra}
+\loadglsentries{.preamble/acronyms}
+\loadglsentries{.preamble/acronyms-extra}
